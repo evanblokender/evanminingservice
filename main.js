@@ -1,5 +1,12 @@
+// ============================================================
+// EVANS MINING SERVICE — main.js
+// Replace the URL below with your Render deployment URL
+// ============================================================
 const API_BASE = 'https://evanminingservice-backend.onrender.com';
 
+// ============================================================
+// Cookie helpers for saving ticket history
+// ============================================================
 function setCookie(name, value, days = 365) {
   const d = new Date();
   d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
@@ -139,7 +146,7 @@ async function submitTicket() {
       showToast(data.error || 'Failed to submit ticket', 'error');
     }
   } catch (e) {
-    showToast('Network error — is the backend running?', 'error');
+    showToast('Error: ' + (e && e.message ? e.message : JSON.stringify(e)), 'error');
   } finally {
     btn.disabled = false;
     btn.textContent = 'Submit Ticket';
@@ -204,7 +211,7 @@ async function submitRating() {
       showToast(data.error || 'Failed to submit review', 'error');
     }
   } catch(e) {
-    showToast('Network error', 'error');
+    showToast('Error: ' + (e && e.message ? e.message : JSON.stringify(e)), 'error');
   } finally {
     btn.disabled = false;
     btn.textContent = 'Submit Review';
