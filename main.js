@@ -1,4 +1,4 @@
-const API_BASE = 'https://evanminingservice-backend.onrender.com/';
+const API_BASE = 'https://evanminingservice-backend.onrender.com';
 
 function setCookie(name, value, days = 365) {
   const d = new Date();
