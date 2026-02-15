@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Evans Mining Service — Professional mining services on Donut SMP. Submit a ticket and get your area cleared fast.">
+  <meta name="theme-color" content="#070d1a">
+  <title>Evans Mining Service — Donut SMP</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-logo" onclick="showView('home')" href="#">
+        <span class="nav-logo-icon">⛏</span>
+        <span>EVANS MINING</span>
+      </a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Menu">☰</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a id="nav-home">Home</a></li>
+        <li><a id="nav-ticket">New Ticket</a></li>
+        <li><a id="nav-reviews">Reviews</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ========== MAIN ========== -->
+  <main>
+
+    <!-- ===== HOME VIEW ===== -->
+    <div id="view-home">
+      <div class="hero">
+        <div class="hero-eyebrow">⛏ Donut SMP • Official Service</div>
+        <h1>Evans <span>Mining</span><br>Service</h1>
+        <p class="hero-sub">
+          Professional mining &amp; excavation on Donut SMP.<br>
+          Submit a ticket and Evan will clear your area fast.
+        </p>
+        <div class="hero-btns">
+          <button class="btn-primary" id="cta-btn">🎫 Create New Ticket</button>
+          <button class="btn-secondary" id="reviews-btn">⭐ See Reviews</button>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-bar">
+        <div class="stat-item">
+          <span class="stat-num">4</span>
+          <span class="stat-label">Area Sizes</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">2</span>
+          <span class="stat-label">Platforms</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">24h</span>
+          <span class="stat-label">Response Time</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Satisfaction</span>
+        </div>
+      </div>
+
+      <!-- How it works -->
+      <div class="section-title">— How It Works</div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">STEP 01</div>
+          <span class="step-icon">🎫</span>
+          <div class="step-title">Submit a Ticket</div>
+          <div class="step-desc">Choose your platform, select an area size, enter your username and email.</div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">STEP 02</div>
+          <span class="step-icon">📧</span>
+          <div class="step-title">Confirm Your Email</div>
+          <div class="step-desc">You'll receive a confirmation email that your ticket was received.</div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">STEP 03</div>
+          <span class="step-icon">💬</span>
+          <div class="step-title">Evan Reaches Out</div>
+          <div class="step-desc">Evan reviews your request and sends you a message when he's ready.</div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">STEP 04</div>
+          <span class="step-icon">⛏</span>
+          <div class="step-title">Area Cleared!</div>
+          <div class="step-desc">Evan clears your plot and you'll receive a completion email. Leave a review!</div>
+        </div>
+      </div>
+
+      <!-- Area pricing -->
+      <div class="section-title">— Available Area Sizes</div>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="price-card-label">Option 01</div>
+          <div class="price-card-size">-5m</div>
+          <div class="price-card-name">Small</div>
+          <div class="price-card-desc">Perfect starter plot for a personal mine</div>
+        </div>
+        <div class="price-card featured">
+          <div class="price-card-label">Option 02</div>
+          <div class="price-card-size">-15m</div>
+          <div class="price-card-name">Medium</div>
+          <div class="price-card-desc">Great for resource gathering &amp; mid-game</div>
+        </div>
+        <div class="price-card">
+          <div class="price-card-label">Option 03</div>
+          <div class="price-card-size">-20m</div>
+          <div class="price-card-name">Large</div>
+          <div class="price-card-desc">Serious excavation for dedicated miners</div>
+        </div>
+        <div class="price-card">
+          <div class="price-card-label">Option 04</div>
+          <div class="price-card-size">-50m</div>
+          <div class="price-card-name">Huge</div>
+          <div class="price-card-desc">Maximum excavation — the full package</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== TICKET VIEW ===== -->
+    <div id="view-ticket" style="display:none">
+      <div class="ticket-header">
+        <h2>⛏ Create New Ticket</h2>
+        <p>Fill out the form below to request your mining service on Donut SMP.</p>
+      </div>
+
+      <div id="ticket-form-area">
+        <!-- Step 1: Platform -->
+        <div class="ticket-card">
+          <div class="ticket-card-header">
+            <div class="step-circle">1</div>
+            <div class="ticket-card-title">Select Your Platform</div>
+          </div>
+          <div class="platform-row">
+            <button class="platform-btn" id="btn-java">
+              <span class="platform-icon">☕</span>
+              <div class="platform-name">Java</div>
+              <div class="platform-sub">Java Edition</div>
+            </button>
+            <button class="platform-btn" id="btn-bedrock">
+              <span class="platform-icon">📱</span>
+              <div class="platform-name">Bedrock</div>
+              <div class="platform-sub">Win10 / Mobile / Console</div>
+            </button>
+          </div>
+          <div class="bedrock-hint" id="bedrock-hint">
+            <span>💡</span>
+            <span>No need to add a <strong style="color:#fff">"."</strong> before your username — we'll add it automatically for Bedrock players!</span>
+          </div>
+        </div>
+
+        <!-- Step 2: Area Size -->
+        <div class="ticket-card" id="step-area">
+          <div class="ticket-card-header">
+            <div class="step-circle">2</div>
+            <div class="ticket-card-title">Choose Area Size</div>
+          </div>
+          <div class="areas-grid">
+            <div class="area-card" id="area-small">
+              <div class="area-card-top">
+                <div class="area-name">Small</div>
+                <div class="area-size">-5m</div>
+              </div>
+              <div class="area-desc">Personal mining plot</div>
+            </div>
+            <div class="area-card" id="area-medium">
+              <div class="area-card-top">
+                <div class="area-name">Medium</div>
+                <div class="area-size">-15m</div>
+              </div>
+              <div class="area-desc">Great for resources</div>
+            </div>
+            <div class="area-card" id="area-large">
+              <div class="area-card-top">
+                <div class="area-name">Large</div>
+                <div class="area-size">-20m</div>
+              </div>
+              <div class="area-desc">Serious excavation</div>
+            </div>
+            <div class="area-card" id="area-huge">
+              <div class="area-card-top">
+                <div class="area-name">Huge</div>
+                <div class="area-size">-50m</div>
+              </div>
+              <div class="area-desc">Maximum zone</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Username & Email -->
+        <div class="ticket-card" id="step-username">
+          <div class="ticket-card-header">
+            <div class="step-circle">3</div>
+            <div class="ticket-card-title">Your Details</div>
+          </div>
+          <div class="form-group">
+            <label for="username-input">Minecraft Username</label>
+            <input
+              type="text"
+              id="username-input"
+              placeholder="e.g. Steve123"
+              maxlength="32"
+              autocomplete="off"
+              spellcheck="false"
+            >
+            <div class="username-preview" id="username-preview"></div>
+          </div>
+          <div class="form-group">
+            <label for="email-input">Email Address</label>
+            <input
+              type="email"
+              id="email-input"
+              placeholder="your@email.com"
+              autocomplete="email"
+            >
+          </div>
+          <div class="submit-btn-wrap">
+            <button class="btn-submit" id="submit-btn">Submit Ticket →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Success screen -->
+      <div class="ticket-card" id="ticket-success">
+        <div class="success-screen">
+          <span class="success-icon">🎉</span>
+          <div class="success-title">Ticket Submitted!</div>
+          <p class="success-desc">
+            Your mining request has been sent! Check your email for confirmation,<br>
+            and Evan will reach out soon.
+          </p>
+          <div class="success-details">
+            <div class="success-detail-row">
+              <span class="success-detail-label">Username</span>
+              <span class="success-detail-value" id="success-username">—</span>
+            </div>
+            <div class="success-detail-row">
+              <span class="success-detail-label">Area Size</span>
+              <span class="success-detail-value" id="success-area">—</span>
+            </div>
+            <div class="success-detail-row">
+              <span class="success-detail-label">Email</span>
+              <span class="success-detail-value" id="success-email">—</span>
+            </div>
+          </div>
+          <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+            <button class="btn-primary" id="back-home-btn">← Back to Home</button>
+            <button class="btn-secondary" id="new-ticket-btn">+ New Ticket</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ticket history -->
+      <div class="history-section">
+        <div class="history-title">📋 Your Previous Tickets (This Device)</div>
+        <div id="ticket-history"></div>
+      </div>
+    </div>
+
+    <!-- ===== REVIEWS VIEW ===== -->
+    <div id="view-reviews" style="display:none">
+      <div class="reviews-header">
+        <h2>⭐ Reviews &amp; Ratings</h2>
+        <p>See what other Donut SMP players think of Evans Mining Service.</p>
+      </div>
+
+      <!-- Average rating summary -->
+      <div class="rating-summary">
+        <div>
+          <div class="rating-big" id="avg-rating">—</div>
+          <div class="rating-stars-label" id="avg-stars"></div>
+          <div class="rating-total" id="total-reviews">No reviews yet</div>
+        </div>
+        <div style="color:var(--text-dim); font-size:14px; max-width:280px;">
+          Real reviews from players on Donut SMP who have used Evans Mining Service.
+        </div>
+      </div>
+
+      <!-- Leave a review -->
+      <div class="leave-review-card">
+        <div class="leave-review-title">✏️ Leave a Review</div>
+
+        <div class="form-group">
+          <label for="review-username">Your Minecraft Username</label>
+          <input type="text" id="review-username" placeholder="e.g. Steve123" maxlength="32" spellcheck="false" autocomplete="off">
+        </div>
+
+        <div style="margin-bottom:4px;">
+          <label style="font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--text-dim);font-family:var(--font-display);">Rating</label>
+        </div>
+        <div class="stars-row">
+          <button class="star-btn" aria-label="1 star">⭐</button>
+          <button class="star-btn" aria-label="2 stars">⭐</button>
+          <button class="star-btn" aria-label="3 stars">⭐</button>
+          <button class="star-btn" aria-label="4 stars">⭐</button>
+          <button class="star-btn" aria-label="5 stars">⭐</button>
+        </div>
+        <div class="rating-label" id="rating-label"></div>
+
+        <textarea
+          class="review-textarea"
+          id="review-text"
+          placeholder="Share your experience with Evans Mining Service... (optional)"
+          maxlength="500"
+        ></textarea>
+
+        <button class="btn-review-submit" id="rating-submit-btn">Submit Review</button>
+      </div>
+
+      <!-- Reviews list -->
+      <div class="reviews-list-title">— Player Reviews</div>
+      <div id="ratings-list">
+        <p style="color:var(--text-dim);text-align:center;padding:32px 0;">Loading reviews...</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ========== TOAST ========== -->
+  <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <strong>⛏ EVANS MINING SERVICE</strong><br>
+    <span style="margin-top:6px;display:block;">Donut SMP • Ticket &amp; Excavation System • All rights reserved</span>
+  </footer>
+
+  <!-- Username preview for bedrock -->
+  <script>
+    // Inline preview script
+    document.addEventListener('DOMContentLoaded', () => {
+      const usernameInput = document.getElementById('username-input');
+      const preview = document.getElementById('username-preview');
+      
+      usernameInput.addEventListener('input', () => {
+        const val = usernameInput.value.trim();
+        if (!val) { preview.textContent = ''; preview.className = 'username-preview'; return; }
+        
+        // We need to check selectedPlatform from main.js
+        // This is set in main.js, so we defer to a short timeout
+        setTimeout(() => {
+          if (window.selectedPlatform === 'bedrock') {
+            preview.textContent = `Your username will appear as: .${val}`;
+            preview.className = 'username-preview bedrock';
+          } else {
+            preview.textContent = `Your username will appear as: ${val}`;
+            preview.className = 'username-preview';
+          }
+        }, 0);
+      });
+    });
+  </script>
+
+  <script src="main.js"></script>
+</body>
+</html>
