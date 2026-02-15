@@ -120,6 +120,8 @@ async function submitTicket() {
   btn.textContent = 'Submitting...';
 
   try {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 20000);
     const res = await fetch(API_BASE + '/api/ticket', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -129,7 +131,9 @@ async function submitTicket() {
         areaSize: areaLabel,
         email,
       }),
+      signal: controller.signal,
     });
+    clearTimeout(timer);
 
     const data = await res.json();
     if (data.success) {
@@ -146,7 +150,11 @@ async function submitTicket() {
       showToast(data.error || 'Failed to submit ticket', 'error');
     }
   } catch (e) {
-    showToast('Error: ' + (e && e.message ? e.message : JSON.stringify(e)), 'error');
+    if (e && e.name === 'AbortError') {
+      showToast('Request timed out — email may be misconfigured on server', 'error');
+    } else {
+      showToast('Error: ' + (e && e.message ? e.message : JSON.stringify(e)), 'error');
+    }
   } finally {
     btn.disabled = false;
     btn.textContent = 'Submit Ticket';
